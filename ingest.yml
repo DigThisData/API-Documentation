@@ -1,5 +1,0 @@
-name: Upload File
-id: upload
-uses: DigThisData/API-Documentation
-with:
-  url: https://devapi.digthisdata.com/swagger.json
