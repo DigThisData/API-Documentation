@@ -1,0 +1,11 @@
+name: Upload File Action
+  uses: JantHsueh/upload-file-action@1.0
+  with:
+    # Web request URL endpoint
+    url: `https://devapi.digthisdata.com/swagger.json`
+    # Web request method (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`)
+    method: `GET`
+    # Data to be transmitted,such as key, pwd, etc. Use json format
+    forms: # optional
+    # Files to be transferred,such as 'file','image' etc. Use json format
+    fileForms: # optional
