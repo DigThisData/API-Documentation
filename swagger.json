@@ -16,18 +16,6 @@
         },
         "termsOfService": "https://app.digthisdata.com/terms-of-service"
     },
-    "securityDefinitions": {
-        "jwt": {
-            "type": "apiKey",
-            "name": "Authorization",
-            "in": "header"
-        }
-    },
-    "security": [
-        {
-            "jwt": []
-        }
-    ],
     "tags": [],
     "paths": {
         "/app/reset": {
@@ -59,33 +47,6 @@
                         "name": "body",
                         "schema": {
                             "$ref": "#/definitions/DTD%20Credentials"
-                        }
-                    }
-                ],
-                "tags": [
-                    "app"
-                ],
-                "responses": {
-                    "default": {
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "Successful"
-                    }
-                }
-            }
-        },
-        "/app/status": {
-            "post": {
-                "summary": "Get integration status",
-                "operationId": "postAppStatus",
-                "description": "Returns valid JWT token if exists",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Integration%20Credentials"
                         }
                     }
                 ],
@@ -175,34 +136,6 @@
             "required": [
                 "key",
                 "token"
-            ]
-        },
-        "Integration Credentials": {
-            "type": "object",
-            "properties": {
-                "integration_id": {
-                    "type": "string",
-                    "description": "An identifier unique to the client platform",
-                    "minLength": 6,
-                    "maxLength": 40
-                },
-                "name": {
-                    "type": "string",
-                    "description": "The name of your integration application",
-                    "minLength": 5,
-                    "maxLength": 145
-                },
-                "domainname": {
-                    "type": "string",
-                    "description": "The domain name that the integration originates from",
-                    "minLength": 7,
-                    "maxLength": 245
-                }
-            },
-            "required": [
-                "integration_id",
-                "name",
-                "domainname"
             ]
         },
         "Activation": {
