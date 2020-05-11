@@ -1,182 +1,170 @@
 {
-  "swagger": "2.0",
-  "host": "devapi.digthisdata.com",
-  "basePath": "/",
-  "schemes": [
-    "https"
-  ],
-  "info": {
-    "title": "API documentation",
-    "version": "0.0.1",
-    "contact": {
-      "name": "DTD Support",
-      "url": "https://support.digthisdata.com",
-      "email": "support@digthisdata.com"
-    },
-    "termsOfService": "https://app.digthisdata.com/terms-of-service"
-  },
-  "tags": [],
-  "paths": {
-    "/app/reset": {
-      "get": {
-        "summary": "Resets DTD table as if App is not installed, but key and token remain.",
-        "operationId": "getAppReset",
-        "description": "For testing only",
-        "tags": [
-          "app"
-        ],
-        "responses": {
-          "default": {
-            "schema": {
-              "type": "string"
-            },
-            "description": "Successful"
-          }
-        }
-      }
-    },
-    "/app": {
-      "post": {
-        "summary": "Get JWT token by DTD credentials",
-        "operationId": "postApp",
-        "description": "Gets JWT token",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "schema": {
-              "$ref": "#/definitions/DTD%20Credentials"
-            }
-          }
-        ],
-        "tags": [
-          "app"
-        ],
-        "responses": {
-          "default": {
-            "schema": {
-              "type": "string"
-            },
-            "description": "Successful"
-          }
-        }
-      }
-    },
-    "/app/activate": {
-      "put": {
-        "summary": "Activates/Deactivates Integration",
-        "operationId": "putAppActivate",
-        "description": "Enable or disable Integrated App",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "schema": {
-              "$ref": "#/definitions/Activation"
-            }
-          }
-        ],
-        "tags": [
-          "app"
-        ],
-        "responses": {
-          "default": {
-            "schema": {
-              "type": "string"
-            },
-            "description": "Successful"
-          }
-        }
-      }
-    },
-    "/app/set": {
-      "put": {
-        "summary": "Sets the Store ID into DTD database",
-        "operationId": "putAppSet",
-        "description": "Will *install* App on the DTD side. Type indicates the integration type. 0 = Shopify.",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "schema": {
-              "$ref": "#/definitions/Integration"
-            }
-          }
-        ],
-        "tags": [
-          "app"
-        ],
-        "responses": {
-          "default": {
-            "schema": {
-              "type": "string"
-            },
-            "description": "Successful"
-          }
-        }
-      }
-    }
-  },
-  "definitions": {
-    "DTD Credentials": {
-      "type": "object",
-      "properties": {
-        "key": {
-          "type": "string",
-          "minLength": 30,
-          "maxLength": 35
+    "swagger": "2.0",
+    "host": "devapi.digthisdata.com",
+    "basePath": "/",
+    "schemes": [
+        "https"
+    ],
+    "info": {
+        "title": "DTD API Documentation",
+        "version": "0.1",
+        "description": "DigThisData API Documentation",
+        "contact": {
+            "name": "DTD Support",
+            "url": "https://support.digthisdata.com",
+            "email": "support@digthisdata.com"
         },
-        "token": {
-          "type": "string",
-          "minLength": 30,
-          "maxLength": 40
-        }
-      },
-      "required": [
-        "key",
-        "token"
-      ]
+        "termsOfService": "https://app.digthisdata.com/terms-of-service"
     },
-    "Activation": {
-      "type": "object",
-      "properties": {
-        "active": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 1
-        }
-      }
-    },
-    "Integration": {
-      "type": "object",
-      "properties": {
-        "integration_id": {
-          "type": "string",
-          "minLength": 6,
-          "maxLength": 40
+    "tags": [],
+    "paths": {
+        "/app/reset": {
+            "get": {
+                "summary": "Resets DTD table as if integration is not installed, but key and token remain.",
+                "operationId": "getAppReset",
+                "description": "For testing only",
+                "tags": [
+                    "app"
+                ],
+                "responses": {
+                    "default": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Successful"
+                    }
+                }
+            }
         },
-        "type": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 10
+        "/app": {
+            "post": {
+                "summary": "Get JWT using DTD credentials (Key/Token)",
+                "operationId": "postApp",
+                "description": "Gets JWT token",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/DTD%20Credentials"
+                        }
+                    }
+                ],
+                "tags": [
+                    "app"
+                ],
+                "responses": {
+                    "default": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Successful"
+                    }
+                }
+            }
+        },
+        "/app/activate": {
+            "put": {
+                "summary": "Activates/Deactivates Integration",
+                "operationId": "putAppActivate",
+                "description": "Enable or disable Integrated App",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Activation"
+                        }
+                    }
+                ],
+                "tags": [
+                    "app"
+                ],
+                "responses": {
+                    "default": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Successful"
+                    }
+                }
+            }
+        },
+        "/app/set": {
+            "put": {
+                "summary": "Sets the Store ID into DTD database",
+                "operationId": "putAppSet",
+                "description": "Installs integrations into the DTD platform. Type indicates the integration type. 0 = Shopify.",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Integration"
+                        }
+                    }
+                ],
+                "tags": [
+                    "app"
+                ],
+                "responses": {
+                    "default": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Successful"
+                    }
+                }
+            }
         }
-      },
-      "required": [
-        "integration_id"
-      ]
+    },
+    "definitions": {
+        "DTD Credentials": {
+            "type": "object",
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "minLength": 30,
+                    "maxLength": 35
+                },
+                "token": {
+                    "type": "string",
+                    "minLength": 30,
+                    "maxLength": 40
+                }
+            },
+            "required": [
+                "key",
+                "token"
+            ]
+        },
+        "Activation": {
+            "type": "object",
+            "properties": {
+                "active": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                }
+            }
+        },
+        "Integration": {
+            "type": "object",
+            "properties": {
+                "integration_id": {
+                    "type": "string",
+                    "minLength": 6,
+                    "maxLength": 40
+                },
+                "type": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 10
+                }
+            },
+            "required": [
+                "integration_id"
+            ]
+        }
     }
-  },
-  "produces": [
-    "application/json"
-  ],
-  "consumes": [
-    "application/json"
-  ],
-  "securityDefinitions": {
-    "JWT": {
-      "name": "API Key",
-      "type": "apiKey",
-      "in": "query"
-    }
-  }
 }
