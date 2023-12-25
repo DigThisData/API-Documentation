@@ -18,8 +18,8 @@ info:
     Is there a limit to the number of requests an user can send?
   version: 1.0.0
 servers:
-  - url: https://devapi.digthisdata.com
-  - url: https://api.digthisdata.com
+  - url: 'https://devapi.digthisdata.com'
+  - url: 'https://api.digthisdata.com'
 components:
   securitySchemes:
     bearerAuth:
@@ -30,7 +30,7 @@ paths:
     post:
       tags:
         - default
-      summary: https://api.digthisdata.com/customer/
+      summary: 'https://api.digthisdata.com/customer/'
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -56,11 +56,13 @@ paths:
               schema:
                 type: string
               example: ''
+      operationId: ''
+      x-internal: true
   /app/reset:
     get:
       tags:
         - default
-      summary: https://devapi.digthisdata.com/products
+      summary: 'https://api.digthisdata.com/app/reset'
       security:
         - bearerAuth: []
       parameters:
@@ -68,8 +70,7 @@ paths:
           in: header
           schema:
             type: string
-          example: >-
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiJ3ZWQxMjM0NTZodWpqa2RlZGVkZWQiLCJhY2NvdW50IjoiNTgyNWVhZmJhMmMzNjEiLCJhY3RpdmUiOmZhbHNlLCJpYXQiOjE1ODkyMDMxMDksImV4cCI6MTU4OTIxNzUwOX0.M5j3iqn8mreipOVrn9M6aCOlVV2wiAIFAespODnRkm8
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiJ3ZWQxMjM0NTZodWpqa2RlZGVkZWQiLCJhY2NvdW50IjoiNTgyNWVhZmJhMmMzNjEiLCJhY3RpdmUiOmZhbHNlLCJpYXQiOjE1ODkyMDMxMDksImV4cCI6MTU4OTIxNzUwOX0.M5j3iqn8mreipOVrn9M6aCOlVV2wiAIFAespODnRkm8
       responses:
         '200':
           content:
@@ -77,11 +78,12 @@ paths:
               schema:
                 type: string
               example: ''
+      x-internal: true
   /app/set:
     put:
       tags:
         - default
-      summary: https://devapi.digthisdata.com/app/set
+      summary: 'https://api.digthisdata.com/app/set'
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -103,8 +105,7 @@ paths:
           in: header
           schema:
             type: string
-          example: >-
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiIiLCJhY2NvdW50IjoiNTgyNWVhZmJhMmMzNjEiLCJhY3RpdmUiOmZhbHNlLCJpYXQiOjE1OTExMTA0MzAsImV4cCI6MTU5MTEyNDgzMH0.Ar8sNRWfRvro84v8a_iZ3woDF4E1zlleMSa26LDRQJU
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiIiLCJhY2NvdW50IjoiNTgyNWVhZmJhMmMzNjEiLCJhY3RpdmUiOmZhbHNlLCJpYXQiOjE1OTExMTA0MzAsImV4cCI6MTU5MTEyNDgzMH0.Ar8sNRWfRvro84v8a_iZ3woDF4E1zlleMSa26LDRQJU
       responses:
         '200':
           content:
@@ -112,11 +113,12 @@ paths:
               schema:
                 type: string
               example: ''
+      x-internal: true
   /app/activate:
     put:
       tags:
         - default
-      summary: https://devapi.digthisdata.com/app/activate
+      summary: 'https://api.digthisdata.com/app/activate'
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -136,8 +138,7 @@ paths:
           in: header
           schema:
             type: string
-          example: >-
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiJ3ZWQxMjM0NTZodWpqa2RlZGVkZWQiLCJhY2NvdW50IjoiNTgyNWVhZmJhMmMzNjEiLCJhY3RpdmUiOmZhbHNlLCJpYXQiOjE1ODkwNjg4MTAsImV4cCI6MTU4OTA3MjQxMH0.t-VWyfXWRRqPaVF5s4BbsEimmidKmBPh3CYiiUZYFDA
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiJ3ZWQxMjM0NTZodWpqa2RlZGVkZWQiLCJhY2NvdW50IjoiNTgyNWVhZmJhMmMzNjEiLCJhY3RpdmUiOmZhbHNlLCJpYXQiOjE1ODkwNjg4MTAsImV4cCI6MTU4OTA3MjQxMH0.t-VWyfXWRRqPaVF5s4BbsEimmidKmBPh3CYiiUZYFDA
       responses:
         '200':
           content:
@@ -145,11 +146,12 @@ paths:
               schema:
                 type: string
               example: ''
+      x-internal: true
   /app/status:
     post:
       tags:
         - default
-      summary: https://devapi.digthisdata.com/app/status
+      summary: 'https://api.digthisdata.com/app/status'
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -172,11 +174,12 @@ paths:
               schema:
                 type: string
               example: ''
+      x-internal: true
   /inventory/2/003:
     get:
       tags:
         - default
-      summary: https://devapi.digthisdata.com/inventory/warehouses
+      summary: 'https://api.digthisdata.com/inventory/warehouses'
       security:
         - bearerAuth: []
       parameters:
@@ -184,8 +187,7 @@ paths:
           in: header
           schema:
             type: string
-          example: >-
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiIzODE0NTUyMzg0NSIsImFjY291bnQiOiI1ODI1ZWFmYmEyYzM2MSIsImFjdGl2ZSI6ZmFsc2UsImlhdCI6MTU5MDQwNzkyMSwiZXhwIjoxNTkwNDIyMzIxfQ.IeMKcJB5s7qU3bTTw9N076iUp86JfYxfFM6qvGVATlc
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiIzODE0NTUyMzg0NSIsImFjY291bnQiOiI1ODI1ZWFmYmEyYzM2MSIsImFjdGl2ZSI6ZmFsc2UsImlhdCI6MTU5MDQwNzkyMSwiZXhwIjoxNTkwNDIyMzIxfQ.IeMKcJB5s7qU3bTTw9N076iUp86JfYxfFM6qvGVATlc
       responses:
         '200':
           content:
@@ -197,7 +199,7 @@ paths:
     post:
       tags:
         - default
-      summary: https://devapi.digthisdata.com/inventory
+      summary: 'https://api.digthisdata.com/inventory'
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -206,10 +208,7 @@ paths:
               properties:
                 skus:
                   type: string
-                  example: >-
-                    1002,1003c,1002b,1003,1004,1005b,1002c,1003b,1004b,1005c,123324pp,f334f34f,003,
-                    NEIPA473mLcansx24,VBLONDE,KD01,
-                    1009,1010,1011,123322pp,1009b,1009c,1010b,1010c,1011b,1011c,1008,FB004,1008c,123321pp,1007,1008b,WW009DS,1006b,TESTALE
+                  example: '1002,1003c,1002b,1003,1004,1005b,1002c,1003b,1004b,1005c,123324pp,f334f34f,003, NEIPA473mLcansx24,VBLONDE,KD01, 1009,1010,1011,123322pp,1009b,1009c,1010b,1010c,1011b,1011c,1008,FB004,1008c,123321pp,1007,1008b,WW009DS,1006b,TESTALE'
       security:
         - bearerAuth: []
       parameters:
@@ -217,8 +216,7 @@ paths:
           in: header
           schema:
             type: string
-          example: >-
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxNjNjNTc1Y2U1NDZjOGU1NmNhODY5MTJmYzhjOWNkNyIsInRva2VuIjoiNjdlOWY1YjYtN2YzNy00MDM0LTk0YWUtMjI0YmI2ZWVkNjUzIiwiaW50ZWdyYXRpb25faWQiOiIzODE0NTUyMzg0NSIsImFjY291bnQiOiI1ODI1ZWFmYmEyYzM2MSIsImFjdGl2ZSI6dHJ1ZSwidHlwZSI6MCwiaWF0IjoxNzAzNTE2Njc1LCJleHAiOjE3MDM1MzEwNzV9.h-kgIJuFlU1wdMFyUClgUd0ZSyGj98gtQyTTYn72Kss
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxNjNjNTc1Y2U1NDZjOGU1NmNhODY5MTJmYzhjOWNkNyIsInRva2VuIjoiNjdlOWY1YjYtN2YzNy00MDM0LTk0YWUtMjI0YmI2ZWVkNjUzIiwiaW50ZWdyYXRpb25faWQiOiIzODE0NTUyMzg0NSIsImFjY291bnQiOiI1ODI1ZWFmYmEyYzM2MSIsImFjdGl2ZSI6dHJ1ZSwidHlwZSI6MCwiaWF0IjoxNzAzNTE2Njc1LCJleHAiOjE3MDM1MzEwNzV9.h-kgIJuFlU1wdMFyUClgUd0ZSyGj98gtQyTTYn72Kss
       responses:
         '200':
           content:
@@ -230,7 +228,7 @@ paths:
     post:
       tags:
         - default
-      summary: https://devapi.digthisdata.com/reporting/product/sales
+      summary: 'https://api.digthisdata.com/reporting/product/sales'
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -239,10 +237,7 @@ paths:
               properties:
                 skus:
                   type: string
-                  example: >-
-                    1002,1003c,1002b,1003,1004,1005b,1002c,1003b,1004b,1005c,123324pp,f334f34f,003,
-                    NEIPA473mLcansx24,VBLONDE,KD01,
-                    1009,1010,1011,123322pp,1009b,1009c,1010b,1010c,1011b,1011c,1008,FB004,1008c,123321pp,1007,1008b,WW009DS,1006b,TESTALE
+                  example: '1002,1003c,1002b,1003,1004,1005b,1002c,1003b,1004b,1005c,123324pp,f334f34f,003, NEIPA473mLcansx24,VBLONDE,KD01, 1009,1010,1011,123322pp,1009b,1009c,1010b,1010c,1011b,1011c,1008,FB004,1008c,123321pp,1007,1008b,WW009DS,1006b,TESTALE'
       security:
         - bearerAuth: []
       parameters:
@@ -250,8 +245,7 @@ paths:
           in: header
           schema:
             type: string
-          example: >-
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxNjNjNTc1Y2U1NDZjOGU1NmNhODY5MTJmYzhjOWNkNyIsInRva2VuIjoiNjdlOWY1YjYtN2YzNy00MDM0LTk0YWUtMjI0YmI2ZWVkNjUzIiwiaW50ZWdyYXRpb25faWQiOiIzODE0NTUyMzg0NSIsImFjY291bnQiOiI1ODI1ZWFmYmEyYzM2MSIsImFjdGl2ZSI6dHJ1ZSwidHlwZSI6MCwiaWF0IjoxNzAzNTE2Njc1LCJleHAiOjE3MDM1MzEwNzV9.h-kgIJuFlU1wdMFyUClgUd0ZSyGj98gtQyTTYn72Kss
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxNjNjNTc1Y2U1NDZjOGU1NmNhODY5MTJmYzhjOWNkNyIsInRva2VuIjoiNjdlOWY1YjYtN2YzNy00MDM0LTk0YWUtMjI0YmI2ZWVkNjUzIiwiaW50ZWdyYXRpb25faWQiOiIzODE0NTUyMzg0NSIsImFjY291bnQiOiI1ODI1ZWFmYmEyYzM2MSIsImFjdGl2ZSI6dHJ1ZSwidHlwZSI6MCwiaWF0IjoxNzAzNTE2Njc1LCJleHAiOjE3MDM1MzEwNzV9.h-kgIJuFlU1wdMFyUClgUd0ZSyGj98gtQyTTYn72Kss
       responses:
         '200':
           content:
