@@ -1,4 +1,6 @@
 openapi: 3.0.0
+x-stoplight:
+  id: ed0ca60ef922b
 info:
   title: DTD Shopify
   description: |-
@@ -58,6 +60,8 @@ paths:
               example: ''
       operationId: ''
       x-internal: true
+      x-stoplight:
+        id: wxe0edzu80ykz
   /app/reset:
     get:
       tags:
@@ -79,6 +83,8 @@ paths:
                 type: string
               example: ''
       x-internal: true
+      x-stoplight:
+        id: 4adfabfexc4cc
   /app/set:
     put:
       tags:
@@ -114,6 +120,8 @@ paths:
                 type: string
               example: ''
       x-internal: true
+      x-stoplight:
+        id: ii4gms4h6zu99
   /app/activate:
     put:
       tags:
@@ -147,6 +155,8 @@ paths:
                 type: string
               example: ''
       x-internal: true
+      x-stoplight:
+        id: y21mjf6jg8fce
   /app/status:
     post:
       tags:
@@ -175,6 +185,8 @@ paths:
                 type: string
               example: ''
       x-internal: true
+      x-stoplight:
+        id: pcx8z9dn9otzz
   /inventory/2/003:
     get:
       tags:
@@ -195,6 +207,8 @@ paths:
               schema:
                 type: string
               example: ''
+      x-stoplight:
+        id: reqxm7p374x17
   /inventory:
     post:
       tags:
@@ -224,6 +238,8 @@ paths:
               schema:
                 type: string
               example: ''
+      x-stoplight:
+        id: qjeyquewv7qam
   /reporting/product/sales:
     post:
       tags:
@@ -253,3 +269,5 @@ paths:
               schema:
                 type: string
               example: ''
+      x-stoplight:
+        id: icxzamzzr470f
