@@ -1,9 +1,14 @@
 {
-  "swagger": "2.0",
-  "host": "devapi.digthisdata.com",
-  "basePath": "/",
-  "schemes": [
-    "https"
+  "swagger": "3.0",
+  "servers": [
+    {
+      "url": "https://devapi.digthisdata.com",
+      "description": "Dev server"
+    },
+    {
+      "url": "https://api.digthisdata.com",
+      "description": "Production server"
+    }
   ],
   "info": {
     "title": "DTD API Documentation",
