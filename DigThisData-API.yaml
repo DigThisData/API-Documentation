@@ -2,23 +2,28 @@ openapi: 3.0.0
 x-stoplight:
   id: ed0ca60ef922b
 info:
-  title: DTD Shopify
+  title: DigThisData API
   description: |-
     # Introduction
-    What does your API do?
+    The DigThisData API provides a REST interface to the underlying core of DigThisData allowing customers to access raw data on request. A DigThisData account is required for all operations. Contact Support for more info.
 
     # Overview
-    Things that the developers should know about
+    API Keys are available in app under Account Management -> 3rd Party / API Integrations
 
     # Authentication
-    What is the preferred way of using the API?
+    The DigThisData API requires an Authorization Bearer JWT Token to be sent in all headers.
 
     # Error Codes
-    What errors and status codes can a user expect?
+
 
     # Rate limit
-    Is there a limit to the number of requests an user can send?
+    Rate limits are enforced per endpoint ranging from 10 to 200 requests per minute.
   version: 1.0.0
+  contact:
+    name: DigThisData Support
+    url: 'https://support.digthisdata.com'
+    email: support@digthisdata.com
+  termsOfService: 'https://app.digthisdata.com/terms-of-service'
 servers:
   - url: 'https://devapi.digthisdata.com'
   - url: 'https://api.digthisdata.com'
