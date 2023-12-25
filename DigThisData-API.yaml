@@ -33,11 +33,11 @@ components:
       type: http
       scheme: bearer
 paths:
-  /app:
+  /:
     post:
       tags:
         - default
-      summary: 'https://api.digthisdata.com/customer/'
+      summary: /customer
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -63,15 +63,23 @@ paths:
               schema:
                 type: string
               example: ''
-      operationId: ''
+      operationId: customer
       x-internal: true
       x-stoplight:
         id: wxe0edzu80ykz
-  /app/reset:
+    get:
+      summary: /app
+      tags: []
+      responses: {}
+      operationId: app
+      x-stoplight:
+        id: jhgowu0i09cor
+    parameters: []
+  /app:
     get:
       tags:
         - default
-      summary: 'https://api.digthisdata.com/app/reset'
+      summary: /app/reset
       security:
         - bearerAuth: []
       parameters:
@@ -90,11 +98,10 @@ paths:
       x-internal: true
       x-stoplight:
         id: 4adfabfexc4cc
-  /app/set:
     put:
       tags:
         - default
-      summary: 'https://api.digthisdata.com/app/set'
+      summary: /app
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -131,7 +138,7 @@ paths:
     put:
       tags:
         - default
-      summary: 'https://api.digthisdata.com/app/activate'
+      summary: /app/activate
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -166,7 +173,7 @@ paths:
     post:
       tags:
         - default
-      summary: 'https://api.digthisdata.com/app/status'
+      summary: /app/status
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -220,7 +227,7 @@ paths:
     post:
       tags:
         - default
-      summary: 'https://api.digthisdata.com/inventory'
+      summary: /inventory
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -251,7 +258,7 @@ paths:
     post:
       tags:
         - default
-      summary: 'https://api.digthisdata.com/reporting/product/sales'
+      summary: /reporting/product/sales
       requestBody:
         content:
           application/x-www-form-urlencoded:
