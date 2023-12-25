@@ -1,15 +1,10 @@
 {
-  "swagger": "3.0",
-  "servers": [
-    {
-      "url": "https://devapi.digthisdata.com",
-      "description": "Dev server"
-    },
-    {
-      "url": "https://api.digthisdata.com",
-      "description": "Production server"
-    }
-  ],
+  "swagger": "2.0",
+  "schemes":{
+    [
+      
+    ]
+  },
   "info": {
     "title": "DTD API Documentation",
     "version": "0.1",

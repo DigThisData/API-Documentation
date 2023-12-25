@@ -1,0 +1,261 @@
+openapi: 3.0.0
+info:
+  title: DTD Shopify
+  description: |-
+    # Introduction
+    What does your API do?
+
+    # Overview
+    Things that the developers should know about
+
+    # Authentication
+    What is the preferred way of using the API?
+
+    # Error Codes
+    What errors and status codes can a user expect?
+
+    # Rate limit
+    Is there a limit to the number of requests an user can send?
+  version: 1.0.0
+servers:
+  - url: https://devapi.digthisdata.com
+  - url: https://api.digthisdata.com
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+paths:
+  /app:
+    post:
+      tags:
+        - default
+      summary: https://api.digthisdata.com/customer/
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                key:
+                  type: string
+                  example: fb0e0096232c6216de201a10df248629
+                token:
+                  type: string
+                  example: 1f6d9285-14bf-4220-baad-c418b3b483b3
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/x-www-form-urlencoded
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /app/reset:
+    get:
+      tags:
+        - default
+      summary: https://devapi.digthisdata.com/products
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiJ3ZWQxMjM0NTZodWpqa2RlZGVkZWQiLCJhY2NvdW50IjoiNTgyNWVhZmJhMmMzNjEiLCJhY3RpdmUiOmZhbHNlLCJpYXQiOjE1ODkyMDMxMDksImV4cCI6MTU4OTIxNzUwOX0.M5j3iqn8mreipOVrn9M6aCOlVV2wiAIFAespODnRkm8
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /app/set:
+    put:
+      tags:
+        - default
+      summary: https://devapi.digthisdata.com/app/set
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: integer
+                  example: '38145523845'
+                type:
+                  type: integer
+                  description: 0 = Shopify
+                  example: '0'
+                foreign_token:
+                  type: integer
+                  example: '1234567'
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiIiLCJhY2NvdW50IjoiNTgyNWVhZmJhMmMzNjEiLCJhY3RpdmUiOmZhbHNlLCJpYXQiOjE1OTExMTA0MzAsImV4cCI6MTU5MTEyNDgzMH0.Ar8sNRWfRvro84v8a_iZ3woDF4E1zlleMSa26LDRQJU
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /app/activate:
+    put:
+      tags:
+        - default
+      summary: https://devapi.digthisdata.com/app/activate
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                active:
+                  type: integer
+                  example: '0'
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiJ3ZWQxMjM0NTZodWpqa2RlZGVkZWQiLCJhY2NvdW50IjoiNTgyNWVhZmJhMmMzNjEiLCJhY3RpdmUiOmZhbHNlLCJpYXQiOjE1ODkwNjg4MTAsImV4cCI6MTU4OTA3MjQxMH0.t-VWyfXWRRqPaVF5s4BbsEimmidKmBPh3CYiiUZYFDA
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /app/status:
+    post:
+      tags:
+        - default
+      summary: https://devapi.digthisdata.com/app/status
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: integer
+                  example: '38145523845'
+                name:
+                  type: string
+                  example: DTD Test Store
+                domainname:
+                  type: string
+                  example: dtd-test-store.myshopify.com
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /inventory/2/003:
+    get:
+      tags:
+        - default
+      summary: https://devapi.digthisdata.com/inventory/warehouses
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxZjFiYjlkOGJjZTVlMzkyOTBiMmFkYThkYTUwNzc4MyIsInRva2VuIjoiMjJjZTI0ZGUtZTU4Ny00MzEwLWEyMmQtYTVjY2E2Y2Y5ZWJhIiwiaW50ZWdyYXRpb25faWQiOiIzODE0NTUyMzg0NSIsImFjY291bnQiOiI1ODI1ZWFmYmEyYzM2MSIsImFjdGl2ZSI6ZmFsc2UsImlhdCI6MTU5MDQwNzkyMSwiZXhwIjoxNTkwNDIyMzIxfQ.IeMKcJB5s7qU3bTTw9N076iUp86JfYxfFM6qvGVATlc
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /inventory:
+    post:
+      tags:
+        - default
+      summary: https://devapi.digthisdata.com/inventory
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                skus:
+                  type: string
+                  example: >-
+                    1002,1003c,1002b,1003,1004,1005b,1002c,1003b,1004b,1005c,123324pp,f334f34f,003,
+                    NEIPA473mLcansx24,VBLONDE,KD01,
+                    1009,1010,1011,123322pp,1009b,1009c,1010b,1010c,1011b,1011c,1008,FB004,1008c,123321pp,1007,1008b,WW009DS,1006b,TESTALE
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxNjNjNTc1Y2U1NDZjOGU1NmNhODY5MTJmYzhjOWNkNyIsInRva2VuIjoiNjdlOWY1YjYtN2YzNy00MDM0LTk0YWUtMjI0YmI2ZWVkNjUzIiwiaW50ZWdyYXRpb25faWQiOiIzODE0NTUyMzg0NSIsImFjY291bnQiOiI1ODI1ZWFmYmEyYzM2MSIsImFjdGl2ZSI6dHJ1ZSwidHlwZSI6MCwiaWF0IjoxNzAzNTE2Njc1LCJleHAiOjE3MDM1MzEwNzV9.h-kgIJuFlU1wdMFyUClgUd0ZSyGj98gtQyTTYn72Kss
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /reporting/product/sales:
+    post:
+      tags:
+        - default
+      summary: https://devapi.digthisdata.com/reporting/product/sales
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                skus:
+                  type: string
+                  example: >-
+                    1002,1003c,1002b,1003,1004,1005b,1002c,1003b,1004b,1005c,123324pp,f334f34f,003,
+                    NEIPA473mLcansx24,VBLONDE,KD01,
+                    1009,1010,1011,123322pp,1009b,1009c,1010b,1010c,1011b,1011c,1008,FB004,1008c,123321pp,1007,1008b,WW009DS,1006b,TESTALE
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIxNjNjNTc1Y2U1NDZjOGU1NmNhODY5MTJmYzhjOWNkNyIsInRva2VuIjoiNjdlOWY1YjYtN2YzNy00MDM0LTk0YWUtMjI0YmI2ZWVkNjUzIiwiaW50ZWdyYXRpb25faWQiOiIzODE0NTUyMzg0NSIsImFjY291bnQiOiI1ODI1ZWFmYmEyYzM2MSIsImFjdGl2ZSI6dHJ1ZSwidHlwZSI6MCwiaWF0IjoxNzAzNTE2Njc1LCJleHAiOjE3MDM1MzEwNzV9.h-kgIJuFlU1wdMFyUClgUd0ZSyGj98gtQyTTYn72Kss
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
