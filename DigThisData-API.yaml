@@ -196,7 +196,7 @@ paths:
     get:
       tags:
         - default
-      summary: 'https://api.digthisdata.com/inventory/warehouses'
+      summary: /inventory/warehouses
       security:
         - bearerAuth: []
       parameters:
@@ -214,6 +214,8 @@ paths:
               example: ''
       x-stoplight:
         id: reqxm7p374x17
+      operationId: ''
+      description: Retrieves a list of warehouses associated with the calling account.
   /inventory:
     post:
       tags:
